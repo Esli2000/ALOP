@@ -5,6 +5,7 @@ https://heasarc.gsfc.nasa.gov/db-perl/W3Browse/w3table.pl?tablehead=name%3Dmilli
 
 ## Tables, Databases, lists, etc.
 https://ui.adsabs.harvard.edu/search/p_=0&q=INOV%20quasar&sort=date%20desc%2C%20bibcode%20desc
+http://vizier.u-strasbg.fr/viz-bin/VizieR?-source=J/A+A/518/A10
 
 ## Objects
 - https://en.wikipedia.org/wiki/BL_Lacertae not visible in march
