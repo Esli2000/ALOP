@@ -1,0 +1,1010 @@
+
+<!-- Do not edit the next lines -->
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="Classification" content="Public">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Mozilla/4.7 [en] (Win95; I) [Netscape]">
+<meta name="Author" content="ING">
+<meta name="Description" content="Object Visibility"><meta name="KeyWords" content="Object Visibility"><title>Object Visibility</title>
+<script>
+function setActiveStyleSheet(title) {
+  var i, a, main;
+  for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+    if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+      a.disabled = true;
+      if(a.getAttribute("title") == title) a.disabled = false;
+    }
+  }
+}
+
+</script>
+
+<script language="javascript">
+var exptime=600.0;
+function chfilter() {
+form=document.forms[0];
+var sky_back=[15.3,13.6,13.,15.3,15.3,15.3,13.6,13.6,13.,13.,13.,13.]; //J,H,Ks,Z,Jc,Pa-g,Hc,F\
+eII,H2(1-0),H2(2-1),Brg,Kc
+var max_dit=[30, 10, 10,100,200,200,60,60,60,60,60,60]; //J,H,Ks,Z,Jc,Pa-g,Hc,FeII,H2(1-0),H2(\
+2-1),Brg,Kc
+var i=form.filter.selectedIndex;
+form.msky.value = sky_back[i];
+form.dit.value = max_dit[i];
+}
+function chexptime() {
+form=document.forms[0];
+var ndither_pt = [2,3,4,5,8,9]
+var ncycles=form.ncycles.value;
+var idith =form.ndither.selectedIndex; var ndither=ndither_pt[idith];
+var nframes=form.nframes.value;
+var tdit=form.dit.value;
+form.exptime.value = ncycles*ndither*nframes*tdit;
+} </script>
+
+
+
+<script language="JavaScript">
+function muestra_oculta(id){
+if (document.getElementById){ //se obtiene el id
+var el = document.getElementById(id); //se define la variable "el" igual a nuestro div
+el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
+}
+}
+window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
+muestra_oculta('contenido_a_mostrar');/* "contenido_a_mostrar" es el nombre que le dimos al DIV */
+}
+</script>
+
+
+<link rel="icon" href="http://www.ing.iac.es/gifs/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.ing.iac.es/gifs/favicon.ico" type="image/x-icon">
+<LINK REL="stylesheet" HREF="http://www.ing.iac.es/stylesheets/stylesheet.css" TYPE="text/css"></link>
+<LINK REL="alternate stylesheet" HREF="http://www.ing.iac.es/stylesheets/smallersize.css" TYPE="text/css" title="smallersize"></link>
+<LINK REL="alternate stylesheet" HREF="http://www.ing.iac.es/stylesheets/biggersize.css" TYPE="text/css" title="biggersize"></link>
+<LINK REL="alternate stylesheet" HREF="http://www.ing.iac.es/stylesheets/bold.css" TYPE="text/css" title="bold"></link>
+
+
+<SCRIPT LANGUAGE=javascript>
+
+/*
+  Esta es la función que oculta el menú cuando el mouse lo abandona
+*/
+function ocultarMenu(menuAOcultar)
+{
+
+	if (document.all) 
+	  document.all(menuAOcultar).style.visibility="hidden";
+	  if (document.getElementById) 
+	    document.getElementById(menuAOcultar).style.visibility="hidden";
+
+}
+ 
+/*
+  Esta es la función que muestra el menú cuando el mouse pasa por encima de él
+*/
+function mostrarMenu(menuAMostrar)
+{
+	if (document.all) 
+	  document.all(menuAMostrar).style.visibility="visible";
+	  if (document.getElementById) 
+	    document.getElementById(menuAMostrar).style.visibility="visible";
+}
+function mostrarMenu2(menuAMostrar1,menuAMostrar2)
+{
+	if (document.all) 
+	  document.all(menuAMostrar1).style.visibility="visible";
+	  if (document.getElementById) 
+	    document.getElementById(menuAMostrar1).style.visibility="visible";
+	if (document.all) 
+	  document.all(menuAMostrar2).style.visibility="visible";
+	  if (document.getElementById) 
+	    document.getElementById(menuAMostrar2).style.visibility="visible";
+}
+ 
+/*
+  Aquí deben estar las funciones que responden a los clics en cada 
+  item del menú
+*/
+function cliqueo(numero)
+{
+	alert("Esta es la opción " + numero);
+}
+ 
+function estoyen(objeto)
+{
+  if (document.all)
+    document.all(objeto).style.textDecoration = "none";
+  if (document.getElementById)  
+    document.getElementById(objeto).style.textDecoration = "none";
+}
+ 
+function salgode(objeto)
+{
+  document.all(objeto).style.textDecoration = "none"
+}
+</SCRIPT>
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" background="http://www.ing.iac.es/gifs/ing_backgrnd.jpg"><center>
+<a name="top"></a>
+
+
+
+
+<link rel="icon" href="http://www.ing.iac.es/gifs/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.ing.iac.es/gifs/favicon.ico" type="image/x-icon">
+<LINK REL=StyleSheet HREF="http://www.ing.iac.es/stylesheets/stylesheet.css" TYPE="text/css">
+
+</head>
+
+
+
+
+<body bgcolor="#FFFFFF" text="#000000" background="http://www.ing.iac.es/gifs/ing_backgrnd.jpg"><center>
+<a name="top"></a>
+
+
+<style>
+
+
+TABLE.menu
+{
+    BACKGROUND-COLOR: #D3DCE3;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin;
+    BORDER-RIGHT: black thin inset;
+    BORDER-TOP: black thin;
+    border: solid black-line;
+    border-collapse: collapse;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 2pt;
+    POSITION: absolute; left: 2px; top: 16px;
+    align: left;
+    box-shadow: 1px 1px  #999;
+    VISIBILITY: hidden
+}
+
+TR.menu
+{
+    border-collapse: collapse
+    padding: 2px;
+    height: 20px;
+}
+TD.menu
+{
+    height: 20px;
+    padding: 2px;
+    border-collapse: collapse
+
+}
+
+TR.menu2
+{
+    border-collapse: collapse
+    padding: 2px;
+    height: 20px;
+}
+TD.menu2
+{
+    height: 20px;
+    padding: 2px;
+    border-collapse: collapse
+
+}
+
+
+TABLE.menu2
+{
+    BACKGROUND-COLOR: #D3DCE3;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin;
+    BORDER-RIGHT: black thin inset;
+    BORDER-TOP: black thin;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 2pt;
+    border: solid black-line;
+    border-collapse: collapse;
+    POSITION: absolute; left: 2px; top: 16px;
+    align: left;
+    box-shadow: 1px 1px  #999;
+VISIBILITY: hidden
+}
+TABLE.menu3
+{
+    BACKGROUND-COLOR: #D3DCE3;
+    BORDER-BOTTOM: black thin solid;
+    BORDER-LEFT: black thin;
+    BORDER-RIGHT: black thin inset;
+    BORDER-TOP: black thin;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 2pt;
+    border: solid black-line;
+    border-collapse: collapse;
+    POSITION: absolute; left: 2px; top: 16px;
+    align: left;
+
+VISIBILITY: hidden
+}
+
+
+.tapado
+{
+    LEFT: 2mm;
+    OVERFLOW: hidden;
+    POSITION: absolute;
+    Z-INDEX: 1
+}
+SPAN.menu
+{
+    BACKGROUND-COLOR: turquoise;
+    COLOR: olive;
+    FONT-FAMILY: Arial;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bolder;
+    POSITION: relative;
+    TEXT-DECORATION: underline;
+    TEXT-TRANSFORM: capitalize;
+    WIDTH: 45pt
+}
+
+DIV.menu
+{
+    CURSOR: hand;
+    LEFT: 10pt;
+    POSITION: absolute; 
+    WIDTH: 60pt;
+    Z-INDEX: 10
+
+}
+SPAN.metodo
+{
+    COLOR: green;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt
+}
+SPAN.objeto
+{
+    COLOR: mediumblue;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt
+}
+SPAN.palabra-clave
+{
+    COLOR: red;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt;
+    FONT-WEIGHT: 500
+}
+SPAN.tag
+{
+    COLOR: brown;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 12pt
+}
+SPAN.comentario
+{
+    COLOR: lightskyblue;
+    FONT-FAMILY: 'MS Sans Serif';
+    FONT-SIZE: 18pt;
+    FONT-WEIGHT: bolder
+}
+
+
+a.plain2:hover {background: #D3DCE3; color: #000099; font-weight: bold}
+a.plain3:hover {background: #000099; color: #D3DCE3; face: bold}
+a.plain3 {text-decoration: none; background: #D3DCE3; color: #000099; font-weight: bold}
+
+</style>
+
+<table border="0" cellspacing="0" cellpadding="0" width="600"><tr><td>
+
+<!--
+<center><a href="http://www.ing.iac.es"><img src="http://www.ing.iac.es/gifs/banner_ing2.jpg" border="0" alt="ING Banner"></a></center></td></tr>
+-->
+
+
+<center><a href="http://www.ing.iac.es"><img src="http://www.ing.iac.es/gifs/banner5_small.png" border="0" alt="ING Banner"></a></center></td></tr>
+
+<tr><td><center>
+<table border="0" cellspacing="0" cellpadding="1" bgcolor="#000000" width="598">
+<tr><td>
+<center>
+<table BORDER="0" cellspacing="0" cellpadding="2" width="100%">
+<tr><td NOWRAP valign="middle" BGCOLOR="#D3DCE3"><center>
+
+<!--
+<div id=wrapper style="position:relative; valign: bottom; height:10; max-height:10px; padding:0px;">
+-->
+
+<!-- Comienzo del menu0 -->
+
+<div style="position: relative; float: left; width: 95px; height: 20px;" id=menu0 onclick=ocultarMenu("mnuPrueba0") onmouseover=mostrarMenu("mnuPrueba0") onmouseout=ocultarMenu("mnuPrueba0")>
+<a class="plain3" href="http://www.ing.iac.es/about-ING/">&nbsp;&nbsp;About ING&nbsp;&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+
+<TABLE id=mnuPrueba0 class=menu>
+
+
+<tr><td>&nbsp;</td></tr>
+
+<TR CLASS=MENU><TD CLASS=MENU class="menu" onmouseover=estoyen("mnu2") onmouseout=salgode("mnu2")  id=mnu2><a class="plain3" href="http://www.ing.iac.es/about-ING/Contact_points/contacts1.html">&nbsp;&nbsp;Address&nbsp;and&nbsp;contacts&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu4") onmouseout=salgode("mnu4")  id=mnu4><a class="plain3" href="http://www.ing.iac.es/intranet/">&nbsp;&nbsp;Intranet&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu4") onmouseout=salgode("mnu4")  id=mnu4><a class="plain3" href="http://www.ing.iac.es/about-ING/Vacancies/vacancies1.html">&nbsp;&nbsp;Job&nbsp;opportunities&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu0") onmouseout=salgode("mnu0")  id=mnu0><a class="plain3" href="http://www.ing.iac.es/last.html">&nbsp;&nbsp;Latest&nbsp;news&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu0") onmouseout=salgode("mnu0")  id=mnu0><a class="plain3" href="http://www.ing.iac.es/about-ING/Overview/ing_overview.html">&nbsp;&nbsp;Overview&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu3") onmouseout=salgode("mnu3")  id=mnu3><a class="plain3" href="http://www.ing.iac.es/about-ING/Staff/ing_staff.html">&nbsp;&nbsp;Staff&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu1") onmouseout=salgode("mnu1")  id=mnu1><a class="plain3" href="http://www.ing.iac.es/about-ING/strategy/">&nbsp;&nbsp;Strategy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+
+</TABLE>
+
+</div>
+<!-- Fin del menu 0 -->
+
+
+<!-- Comienzo del menu1 -->
+<div style="position: relative; float: left; width: 95px; height: 20px;" id=menu1 onclick=ocultarMenu("mnuPrueba1") onmouseover=mostrarMenu("mnuPrueba1") onmouseout=ocultarMenu("mnuPrueba1")>
+<a class="plain3" href="http://www.ing.iac.es/astronomy/">&nbsp;&nbsp;Astronomy&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+<TABLE class=menu2 id="mnuPrueba1">
+
+
+<tr class=menu2><td class=menu2 colspan=2><br></td></tr>
+
+
+
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu5") onmouseout=salgode("mnu5")  id=mnu5><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/INGinfo_home.html">&nbsp;&nbsp;Applying&nbsp;for&nbsp;time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu16") onmouseout=salgode("mnu16")  id=mnu16><a class="plain3" href="http://catserver.ing.iac.es/staralt/index.php">Object&nbsp;visibility&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu24") onmouseout=salgode("mnu24")  id=mnu24><a class="plain3" href="http://casu.ast.cam.ac.uk/casuadc/archives/ingarch">&nbsp;&nbsp;Archive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu23") onmouseout=salgode("mnu23")  id=mnu23><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/inglogs.php">Observing&nbsp;logs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu22") onmouseout=salgode("mnu22")  id=mnu22><a class="plain3" href="http://www.ing.iac.es/astronomy/computing/">&nbsp;&nbsp;Computing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu19") onmouseout=salgode("mnu19")  id=mnu19><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/overrides.html">Override&nbsp;programmes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu27") onmouseout=salgode("mnu27")  id=mnu27><a class="plain3" href="http://www.ing.iac.es/astronomy/science/conferences.html">&nbsp;&nbsp;Conferences&nbsp;and&nbsp;meetings</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu14") onmouseout=salgode("mnu14")  id=mnu14><a class="plain3" href="http://www.ing.iac.es/astronomy/planning/">Planning&nbsp;observations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu13") onmouseout=salgode("mnu13")  id=mnu13><a class="plain3" href="http://www.ing.iac.es/engineering/detectors.html">&nbsp;&nbsp;Detectors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu17") onmouseout=salgode("mnu17")  id=mnu17><a class="plain3" href="http://catserver.ing.iac.es/biblio/pubs.php">Publications&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu15") onmouseout=salgode("mnu15")  id=mnu15><a class="plain3" href="http://catserver.ing.iac.es/signal/">&nbsp;&nbsp;Exposure&nbsp;time&nbsp;calculator&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu17") onmouseout=salgode("mnu17")  id=mnu17><a class="plain3" href="http://catserver.ing.iac.es/schedules/">Schedules&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu20") onmouseout=salgode("mnu20")  id=mnu20><a class="plain3" href="http://www.ing.iac.es/faultdb/">&nbsp;&nbsp;Fault&nbsp;reports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu26") onmouseout=salgode("mnu26")  id=mnu26><a class="plain3" href="http://www.ing.iac.es/astronomy/science/seminars.html">Seminar&nbsp;programme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu21") onmouseout=salgode("mnu21")  id=mnu21><a class="plain3" href="http://catserver.ing.iac.es/feedback/">&nbsp;&nbsp;Feedback&nbsp;form&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu7") onmouseout=salgode("mnu7")  id=mnu7><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/service/">Service&nbsp;programme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu12") onmouseout=salgode("mnu12")  id=mnu12><a class="plain3" href="http://catserver.ing.iac.es/filter/">&nbsp;&nbsp;Filters&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu8") onmouseout=salgode("mnu8")  id=mnu8><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/conditions/">Site&nbsp;quality&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu11") onmouseout=salgode("mnu11")  id=mnu11><a class="plain3" href="http://www.ing.iac.es/PR/email_alerts.html">&nbsp;&nbsp;[INGNEWS]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu25") onmouseout=salgode("mnu25")  id=mnu25><a class="plain3" href="http://www.ing.iac.es/astronomy/science/studentship.html">Studentship&nbsp;programme&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu11") onmouseout=salgode("mnu11")  id=mnu11><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/instruments.html">&nbsp;&nbsp;Instruments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu6") onmouseout=salgode("mnu6")  id=mnu6><a class="plain3" href="http://www.ing.iac.es/astronomy/observing/patt/time.html">Time&nbsp;allocations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu10") onmouseout=salgode("mnu10")  id=mnu10><a class="plain3" href="http://www.ing.iac.es/Astronomy/telescopes/int/">&nbsp;&nbsp;Isaac&nbsp;Newton&nbsp;Telescope&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu18") onmouseout=salgode("mnu18")  id=mnu18><a class="plain3" href="http://catserver.ing.iac.es/weather/">Weather&nbsp;and&nbsp;seeing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+
+</TR>
+
+
+
+<TR CLASS=MENU2>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu28") onmouseout=salgode("mnu28")  id=mnu28><a class="plain3" href="http://www.ing.iac.es/astronomy/library/">&nbsp;&nbsp;Library&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD>
+<TD CLASS=MENU2 onmouseover=estoyen("mnu9") onmouseout=salgode("mnu9")  id=mnu9><a class="plain3" href="http://www.ing.iac.es/Astronomy/telescopes/wht/">William&nbsp;Herschel&nbsp;Telescope</a></TD>
+</TR>
+
+</TABLE>
+
+
+
+</div>
+<!-- Fin del menu 1 -->
+
+
+<!-- Comienzo del menu2 -->
+<div style="position: relative; float: left; width: 115px; height: 20px;" id=menu2 onclick=ocultarMenu("mnuPrueba2") onmouseover=mostrarMenu("mnuPrueba2") onmouseout=ocultarMenu("mnuPrueba2")>
+<a class="plain3" href="http://www.ing.iac.es/engineering/">&nbsp;&nbsp;Developments&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+
+<TABLE id=mnuPrueba2 class=menu>
+
+
+
+<tr><td height=1>&nbsp;</td></tr>
+
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu30") onmouseout=salgode("mnu30")  id=mnu30><a class="plain3" href="http://www.ing.iac.es/Astronomy/instruments/acam/">&nbsp;&nbsp;ACAM&nbsp;imager&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu31") onmouseout=salgode("mnu31")  id=mnu31><a class="plain3" href="http://www.ing.iac.es/engineering/CCDgroup.html">&nbsp;&nbsp;CCD&nbsp;developments&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu32") onmouseout=salgode("mnu32")  id=mnu32><a class="plain3" href="http://www.ing.iac.es/engineering/mass.htm">&nbsp;&nbsp;MASS&nbsp;turbulence&nbsp;profiler&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu33") onmouseout=salgode("mnu33")  id=mnu33><a class="plain3" href="http://www.ing.iac.es/engineering/software.htm">&nbsp;&nbsp;Software&nbsp;and&nbsp;computing&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu29") onmouseout=salgode("mnu29")  id=mnu29><a class="plain3" href="http://www.ing.iac.es/weave/">&nbsp;&nbsp;WEAVE&nbsp;MOS&nbsp;spectrograph</a></TD></TR>
+</TABLE>
+
+</div>
+<!-- Fin del menu 2 -->
+
+<!-- Comienzo del menu3 -->
+<div style="position: relative; float: left; width: 130px; height: 20px;" id=menu3 onclick=ocultarMenu("mnuPrueba3") onmouseover=mostrarMenu("mnuPrueba3") onmouseout=ocultarMenu("mnuPrueba3")>
+<a class="plain3" href="http://www.ing.iac.es/PR/">&nbsp;&nbsp;Public Information&nbsp;<img src="http://www.ing.iac.es/gifs/menu.gif" border="0" align="bottom"></a>
+
+<TABLE class=menu id=mnuPrueba3>
+
+
+<tr><td>&nbsp;</td></tr>
+
+
+<TR CLASS=MENU><TD onmouseover=estoyen("mnu44") onmouseout=salgode("mnu44")  id=mnu44><a class="plain3" href="http://www.ing.iac.es/PR/dissemination/question.php">&nbsp;&nbsp;Ask&nbsp;an&nbsp;astronomer&nbsp;!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu45") onmouseout=salgode("mnu45")  id=mnu45><a class="plain3" href="http://www.ing.iac.es/PR/credits.html">&nbsp;&nbsp;Credits&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu41") onmouseout=salgode("mnu41")  id=mnu41><a class="plain3" href="http://www.ing.iac.es/PR/images_index.html">&nbsp;&nbsp;Images&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu36") onmouseout=salgode("mnu36")  id=mnu36><a class="plain3" href="http://www.ing.iac.es/PR/int_info/">&nbsp;&nbsp;Info&nbsp;INT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<!--
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu37") onmouseout=salgode("mnu37")  id=mnu37><a class="plain3" href="http://www.ing.iac.es/PR/jkt_info/">&nbsp;&nbsp;Info&nbsp;JKT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+-->
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu35") onmouseout=salgode("mnu35")  id=mnu35><a class="plain3" href="http://www.ing.iac.es/PR/wht_info/">&nbsp;&nbsp;Info&nbsp;WHT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+<!--
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu35") onmouseout=salgode("mnu35")  id=mnu35><a class="plain3" href="http://www.ing.iac.es/PR/email_alerts.html">&nbsp;&nbsp;[INGPUBLIC]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+-->
+<!--
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu46") onmouseout=salgode("mnu46")  id=mnu46><a class="plain3" href="http://www.lpiya.org/">LPIYA&nbsp;Group</a></TD></TR>
+-->
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu38") onmouseout=salgode("mnu38")  id=mnu38><a class="plain3" href="http://www.ing.iac.es/news.html">&nbsp;&nbsp;News&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu40") onmouseout=salgode("mnu40")  id=mnu40><a class="plain3" href="http://www.ing.iac.es/PR/archive/">&nbsp;&nbsp;Photos&nbsp;and&nbsp;videos&nbsp;&nbsp;</a></TD></TR>
+
+<!--
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu46") onmouseout=salgode("mnu46")  id=mnu46><a class="plain3" href="http://www.lpiya.org/nuestrosalumnos/">&nbsp;&nbsp;School&nbsp;(Local)&nbsp;Programme</a></TD></TR>
+-->
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu42") onmouseout=salgode("mnu42")  id=mnu42><a class="plain3" href="http://www.ing.iac.es/PR/SH/">&nbsp;&nbsp;Scientific&nbsp;highlights&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu34") onmouseout=salgode("mnu34")  id=mnu34><a class="plain3" href="http://www.ing.iac.es/PR/tour/leaflet.html">&nbsp;&nbsp;Virtual&nbsp;tour&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+<TR CLASS=MENU><TD CLASS=MENU onmouseover=estoyen("mnu43") onmouseout=salgode("mnu43")  id=mnu43><a class="plain3" href="http://www.ing.iac.es/PR/visits/">&nbsp;&nbsp;Visiting&nbsp;ING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></TD></TR>
+
+</TABLE>
+</div>
+<!-- Fin del menu 3 -->
+</td>
+
+<td NOWRAP BGCOLOR="#D3DCE3">
+
+
+<form method="get" action="http://google.ing.iac.es/search">
+<div style="position: relative; float: left; width: 140px; height: 22px;">
+<a class="plain3" href="http://www.ing.iac.es/search/">Search:&nbsp;</a>
+<input style="height:18px;" type="text" name="q" size="8">
+</div>
+<input type="hidden" name="btnG" value="ING+Document+Search">
+<input type="hidden" name="entqr" value="0">
+<input type="hidden" name="output" value="xml_no_dtd">
+<input type="hidden" name="sort" value="date%3AD%3AL%3Ad1">
+<input type="hidden" name="entsp" value="a">
+<input type="hidden" name="client" value="ing">
+<input type="hidden" name="ud" value="1">
+<input type="hidden" name="oe" value="UTF-8">
+<input type="hidden" name="ie" value="UTF-8">
+<input type="hidden" name="proxystylesheet" value="ing">
+<input type="hidden" name="site" value="v20z">
+</form>
+
+</td></tr></table>
+
+</td></tr></table>
+
+</td></tr></table>
+
+<table border=0 cellpadding=0 cellspacing=0 width=600><tr><td>
+<b><a href="http://www.ing.iac.es/">Home</a> &gt;
+<a href="http://www.ing.iac.es/Astronomy/">Astronomy</a> &gt;
+</b><i>Object Visibility</i>
+</td></tr></table>
+<br><br>
+</center>
+
+<center><table width="600"><tr><td>
+
+<!-- End of header -->
+<!-- Start of body text. Edit with simple HTML code -->
+
+
+
+<table border="0" width="600">
+
+<tr><td align="left">
+
+
+  <center><h2>Object Visibility &#8211; STARALT</h2></center>
+<div align="justify">
+
+
+Staralt  is a program that shows the observability of objects in various ways:
+ either you can plot altitude against time for a particular night
+ (<b>Staralt</b>), or plot the path of your objects across the
+ sky for a particular night (<b>Startrack</b>),
+ or plot how altitude changes over a year (<b>Starobs</b>),
+ or get a table with the best observing date for each object
+  (<b>Starmult</b>). 
+
+<!--
+Please note that at the INT the lowest altitude limit depends on target&acute;s declination, see this plot of the
+<a href="http://www.ing.iac.es/astronomy/telescopes/int/INTvisibility.jpg">INT pointing range (lowest altitude vs. declination)</a>.
+--> 
+ For further information, click on the
+ "help" button at the bottom of the page.<br>
+<hr>
+</td></tr>
+</table>
+<!--
+<p>
+<table bgcolor="#FFFFFF" cellpadding=5><tr><td align="justify"><b><font size=+1 color="red">Vignetting at low elevation</font></b><p>
+ The WHT lower dome shutter is currently out of action, and observations at elevation &lt;25 
+ deg will be vignetted (<a href="http://www.ing.iac.es/Astronomy/telescopes/wht/whtvign.html">plot</a>).</td></tr></table>
+-->
+<p>
+
+<form action="index.php" method="post" enctype="multipart/form-data"
+target="display:width={862},height={692},
+         {(isResizable)?'resizable':''},
+         status"
+onSubmit="return createTarget(this);">
+<input type="hidden" name="action" value="showImage"> 
+							
+
+<table width="600" border="0" cellpadding="5" cellspacing="2">
+<tr>
+<td align="left" bgcolor="#D3DCE3"><b>Mode</b></td>
+<td bgcolor="#FFFFCC"><select name="form[mode]">
+     <option value="1" selected> Staralt
+     <option value="2"> Startrack
+     <option value="3"> Starobs
+     <option value="4"> Starmult
+    </select>
+</td>
+</tr>
+
+<tr>
+ <td align="left" valign="middle" bgcolor="#D3DCE3"><b>Night</b></td> 
+ <td bgcolor="#FFFFCC"><div align=justify>
+  <select name="form[day]"><option value="01" SELECTED>01
+<option value="02">02
+<option value="03">03
+<option value="04">04
+<option value="05">05
+<option value="06">06
+<option value="07">07
+<option value="08">08
+<option value="09">09
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+<option value="31">31
+</select>  <select name="form[month]"><option value="01">January
+<option value="02">February
+<option value="03">March
+<option value="04">April
+<option value="05">May
+<option value="06">June
+<option value="07">July
+<option value="08">August
+<option value="09">September
+<option value="10">October
+<option value="11" SELECTED>November
+<option value="12">December
+</select>  <select name="form[year]"><option>1985
+<option>1986
+<option>1987
+<option>1988
+<option>1989
+<option>1990
+<option>1991
+<option>1992
+<option>1993
+<option>1994
+<option>1995
+<option>1996
+<option>1997
+<option>1998
+<option>1999
+<option>2000
+<option>2001
+<option>2002
+<option>2003
+<option>2004
+<option>2005
+<option>2006
+<option>2007
+<option>2008
+<option>2009
+<option>2010
+<option>2011
+<option>2012
+<option>2013
+<option>2014
+<option>2015
+<option>2016
+<option>2017
+<option>2018
+<option SELECTED>2019
+<option>2020
+</select>  or date when the local night starts. <i>Staralt, Startrack only</i>.
+</tr>
+
+<tr>
+ <td align="left" valign="middle" bgcolor="#D3DCE3"><b>Observatory</b></td>
+ <td bgcolor="#FFFFCC"><div align=justify>
+<!--
+  <select name="form[observatory]">
+-->
+  <select name="form[obs_name]">
+  Array
+(
+    [0] => Roque de los Muchachos Observatory (La Palma, Spain)
+    [1] => Teide Observatory (Tenerife, Spain)
+    [2] => Abruzzo Astronomical Observatory - TNT (INAF-OA Abruzzo, Italy)
+    [3] => Apache Point Observatory (New Mexico, USA)
+    [4] => Asiago Astrophysical Observatories (Italy)
+    [5] => Assy-Turgen Observatory (Kazakhstan)
+    [6] => Bohyunsan Optical Astronomy Observatory (Korea)
+    [7] => Brorfelde Observatory (Denmark)
+    [8] => Byurakan Observatory (Armenia)
+    [9] => Calar Alto Observatory (Almeria, Spain)
+    [10] => Campo Imperatore Observatory (INAF-OA Abruzzo, Italy)
+    [11] => Cerro Pachon Observatory (Chile)
+    [12] => Cerro Paranal Observatory (Chile)
+    [13] => Cerro Tololo Observatory (Chile)
+    [14] => Dominion Astrophysical Observatory (Canada)
+    [15] => El Leoncito Observatory (Argentina)
+    [16] => Fred Lawrence Whipple Observatory (Arizona, USA)
+    [17] => Guillermo Haro Astrophysical Observatory (Sonora, Mexico)
+    [18] => Haute-Provence Observatory (France)
+    [19] => Helmos Observatory (Greece)
+    [20] => Javalambre Astronomical Observatory (Teruel, Spain)
+    [21] => Kitt Peak Observatory (Arizona, USA)
+    [22] => Kryoneri Observatory (Greece)
+    [23] => La Luz Observatory (Mexico)
+    [24] => La Silla Observatory (Chile)
+    [25] => Large Millimeter Telescope (Mexico)
+    [26] => Las Campanas Observatory (Chile)
+    [27] => Lick Observatory (California, USA)
+    [28] => Lijiang Observatory (China)
+    [29] => Loiano Observatory (Italy)
+    [30] => Lulin Observatory (Taiwan)
+    [31] => Mauna Kea Observatory (Hawaii, USA)
+    [32] => McDonald Observatory (Texas, USA)
+    [33] => Montsec Astronomical Observatory (Lleida, Spain)
+    [34] => Mount Graham International Observatory (Arizona, USA)
+    [35] => Mount Lemon Optical Astronomy Observatory (Arizona, USA)
+    [36] => National Astronomical Observatory Rozhen (Bulgaria)
+    [37] => Observatoire de la Cote dAzur (France)
+    [38] => Pearl Station (Canada)
+    [39] => Pico dos Dias Observatory (Brazil)
+    [40] => Pine Mountain Observatory (USA)
+    [41] => Piszkesteto Observatory (Hungary)
+    [42] => Palomar Observatory (California, USA)
+    [43] => San Pedro Martir Observatory (Mexico)
+    [44] => Seimei Telescope (Japan)
+    [45] => Siding Spring Observatory (Australia)
+    [46] => Sierra Nevada Observatory (Granada, Spain)
+    [47] => Skinakas Observatory (Crete, Greece)
+    [48] => Sobaeksan Optical Astronomy Observatory (Korea)
+    [49] => Special Astrophysical Observatory (Russia)
+    [50] => Sutherland Observatory (South Africa)
+    [51] => Tian Shan Observatory (Kazakhstan)
+    [52] => Thai National Observatory, NARI (Thailand)
+    [53] => Thueringer Landessternwarte Tautenburg (Germany)
+    [54] => Tubitak National Observatory (Turkey)
+    [55] => Vidojevica Astronomical Station (Serbia)
+    [56] => Virgin Island Robotic Telescope (US Virgin Islands)
+    [57] => Wendelstein Observatory (Germany)
+    [58] => Wise Observatory (Israel)
+    [59] => Xinglong Observatory (China)
+)
+<option value="Roque de los Muchachos Observatory (La Palma, Spain)"> Roque de los Muchachos Observatory (La Palma, Spain) 
+<option value="Teide Observatory (Tenerife, Spain)"> Teide Observatory (Tenerife, Spain) 
+<option value="Abruzzo Astronomical Observatory - TNT (INAF-OA Abruzzo, Italy)"> Abruzzo Astronomical Observatory - TNT (INAF-OA Abruzzo, Italy) 
+<option value="Apache Point Observatory (New Mexico, USA)"> Apache Point Observatory (New Mexico, USA) 
+<option value="Asiago Astrophysical Observatories (Italy)"> Asiago Astrophysical Observatories (Italy) 
+<option value="Assy-Turgen Observatory (Kazakhstan)"> Assy-Turgen Observatory (Kazakhstan) 
+<option value="Bohyunsan Optical Astronomy Observatory (Korea)"> Bohyunsan Optical Astronomy Observatory (Korea) 
+<option value="Brorfelde Observatory (Denmark)"> Brorfelde Observatory (Denmark) 
+<option value="Byurakan Observatory (Armenia)"> Byurakan Observatory (Armenia) 
+<option value="Calar Alto Observatory (Almeria, Spain)"> Calar Alto Observatory (Almeria, Spain) 
+<option value="Campo Imperatore Observatory (INAF-OA Abruzzo, Italy)"> Campo Imperatore Observatory (INAF-OA Abruzzo, Italy) 
+<option value="Cerro Pachon Observatory (Chile)"> Cerro Pachon Observatory (Chile) 
+<option value="Cerro Paranal Observatory (Chile)"> Cerro Paranal Observatory (Chile) 
+<option value="Cerro Tololo Observatory (Chile)"> Cerro Tololo Observatory (Chile) 
+<option value="Dominion Astrophysical Observatory (Canada)"> Dominion Astrophysical Observatory (Canada) 
+<option value="El Leoncito Observatory (Argentina)"> El Leoncito Observatory (Argentina) 
+<option value="Fred Lawrence Whipple Observatory (Arizona, USA)"> Fred Lawrence Whipple Observatory (Arizona, USA) 
+<option value="Guillermo Haro Astrophysical Observatory (Sonora, Mexico)"> Guillermo Haro Astrophysical Observatory (Sonora, Mexico) 
+<option value="Haute-Provence Observatory (France)"> Haute-Provence Observatory (France) 
+<option value="Helmos Observatory (Greece)"> Helmos Observatory (Greece) 
+<option value="Javalambre Astronomical Observatory (Teruel, Spain)"> Javalambre Astronomical Observatory (Teruel, Spain) 
+<option value="Kitt Peak Observatory (Arizona, USA)"> Kitt Peak Observatory (Arizona, USA) 
+<option value="Kryoneri Observatory (Greece)"> Kryoneri Observatory (Greece) 
+<option value="La Luz Observatory (Mexico)"> La Luz Observatory (Mexico) 
+<option value="La Silla Observatory (Chile)"> La Silla Observatory (Chile) 
+<option value="Large Millimeter Telescope (Mexico)"> Large Millimeter Telescope (Mexico) 
+<option value="Las Campanas Observatory (Chile)"> Las Campanas Observatory (Chile) 
+<option value="Lick Observatory (California, USA)"> Lick Observatory (California, USA) 
+<option value="Lijiang Observatory (China)"> Lijiang Observatory (China) 
+<option value="Loiano Observatory (Italy)"> Loiano Observatory (Italy) 
+<option value="Lulin Observatory (Taiwan)"> Lulin Observatory (Taiwan) 
+<option value="Mauna Kea Observatory (Hawaii, USA)"> Mauna Kea Observatory (Hawaii, USA) 
+<option value="McDonald Observatory (Texas, USA)"> McDonald Observatory (Texas, USA) 
+<option value="Montsec Astronomical Observatory (Lleida, Spain)"> Montsec Astronomical Observatory (Lleida, Spain) 
+<option value="Mount Graham International Observatory (Arizona, USA)"> Mount Graham International Observatory (Arizona, USA) 
+<option value="Mount Lemon Optical Astronomy Observatory (Arizona, USA)"> Mount Lemon Optical Astronomy Observatory (Arizona, USA) 
+<option value="National Astronomical Observatory Rozhen (Bulgaria)"> National Astronomical Observatory Rozhen (Bulgaria) 
+<option value="Observatoire de la Cote dAzur (France)"> Observatoire de la Cote dAzur (France) 
+<option value="Pearl Station (Canada)"> Pearl Station (Canada) 
+<option value="Pico dos Dias Observatory (Brazil)"> Pico dos Dias Observatory (Brazil) 
+<option value="Pine Mountain Observatory (USA)"> Pine Mountain Observatory (USA) 
+<option value="Piszkesteto Observatory (Hungary)"> Piszkesteto Observatory (Hungary) 
+<option value="Palomar Observatory (California, USA)"> Palomar Observatory (California, USA) 
+<option value="San Pedro Martir Observatory (Mexico)"> San Pedro Martir Observatory (Mexico) 
+<option value="Seimei Telescope (Japan)"> Seimei Telescope (Japan) 
+<option value="Siding Spring Observatory (Australia)"> Siding Spring Observatory (Australia) 
+<option value="Sierra Nevada Observatory (Granada, Spain)"> Sierra Nevada Observatory (Granada, Spain) 
+<option value="Skinakas Observatory (Crete, Greece)"> Skinakas Observatory (Crete, Greece) 
+<option value="Sobaeksan Optical Astronomy Observatory (Korea)"> Sobaeksan Optical Astronomy Observatory (Korea) 
+<option value="Special Astrophysical Observatory (Russia)"> Special Astrophysical Observatory (Russia) 
+<option value="Sutherland Observatory (South Africa)"> Sutherland Observatory (South Africa) 
+<option value="Tian Shan Observatory (Kazakhstan)"> Tian Shan Observatory (Kazakhstan) 
+<option value="Thai National Observatory, NARI (Thailand)"> Thai National Observatory, NARI (Thailand) 
+<option value="Thueringer Landessternwarte Tautenburg (Germany)"> Thueringer Landessternwarte Tautenburg (Germany) 
+<option value="Tubitak National Observatory (Turkey)"> Tubitak National Observatory (Turkey) 
+<option value="Vidojevica Astronomical Station (Serbia)"> Vidojevica Astronomical Station (Serbia) 
+<option value="Virgin Island Robotic Telescope (US Virgin Islands)"> Virgin Island Robotic Telescope (US Virgin Islands) 
+<option value="Wendelstein Observatory (Germany)"> Wendelstein Observatory (Germany) 
+<option value="Wise Observatory (Israel)"> Wise Observatory (Israel) 
+<option value="Xinglong Observatory (China)"> Xinglong Observatory (China) 
+  </select><br>Select one above or specify your own site with this format:<br>
+<table cellpadding=2><tr><td>
+<tt>Longitude(&deg;E)</td><td><tt>Latitude(&deg;N)</td><td><tt>Altitude(metres)</td><td><tt>UT-offset(hours)</td></tr></table>
+ Ex.: <tt>289.2767 -30.2283 2725 -4</tt><br>
+   <font face="courier"><input type="text" size="32" name="form[sitecoord]" value=""></font>
+ </td>
+</tr>
+
+<tr>
+ <td align="left" valign="middle" bgcolor="#D3DCE3"><b>Coordinates</b></td>
+ <td bgcolor="#FFFFCC"><div align=justify>Formats can be any of these:<br> 
+<tt>name hh mm ss &plusmn;dd mm ss</tt> 
+<br><tt>name hh:mm:ss &plusmn;dd:mm:ss</tt><br>
+<tt>name ddd.ddd dd.ddd</tt>
+<br><tt>name</tt> must be a single word with no dots, avoid using single numbers. Every entry must be in the same format, do not use different formats with different entries. We recommmend a maximum of 100 targets per submission.<br> 
+
+   <font face="courier"><textarea name="form[coordlist]" rows="5" cols="30"></textarea></font><br><div align=justify>
+																				      Alternatively, you can upload a file with coordinates. You can use the same format as in the <a href="http://www.ing.iac.es/Astronomy/telescopes/wht/catformat.html">TCS catalog</a>. Target names must be single words with no dots.<br>
+   <font face="courier">
+<input type="file" name="coordfile" size="32">
+
+</font>
+ </td>
+</tr>
+
+<tr>
+ <td align="left" valign="middle" bgcolor="#D3DCE3"><b>Options</b></td> 
+ <td bgcolor="#FFFFCC"> 
+  <table cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td align="left" valign=top><select name="form[paramdist]">
+        <option value="0"> None
+        <option selected value="2"> Moon distance
+        <option value="1"> Parallactic angle
+        </select>
+
+    </td> 
+      <td valign=top> &nbsp;Included on plot. Moon coordinates at ~02:00 UT. <i>Staralt only</i>.</td>
+  </tr>
+  <tr>
+    <td align="left" valign=top><select name="form[minangle]">
+        <option value="10"> 10&deg;, X=5.8
+<option value="12"> 12&deg;, X=4.8
+<option value="15"> 15&deg;, X=3.9
+<option value="20"> 20&deg;, X=2.9
+<option value="25"> 25&deg;, X=2.4
+<option value="30"> 30&deg;, X=2.0
+<option value="32"> 32&deg;, X=1.9
+<option value="33"> 33&deg;, X=1.8
+<option value="35"> 35&deg;, X=1.7
+<option value="40"> 40&deg;, X=1.6
+<option value="42"> 42&deg;, X=1.5
+<option value="45"> 45&deg;, X=1.4
+<option value="50"> 50&deg;, X=1.3
+<option value="55"> 55&deg;, X=1.2
+<option value="60"> 60&deg;, X=1.1
+<option value="65"> 65&deg;, X=1.1
+<option value="70"> 70&deg;, X=1.1
+<option value="75"> 75&deg;, X=1.0
+<option value="80"> 80&deg;, X=1.0
+       </select>
+
+    </td>
+       <td valign=top>&nbsp;Min. elevation (or max. airmass X). <i>Starobs, Starmult only</i>.</td>
+  </tr>
+  <tr>
+    <td align="left"><select name="form[format]">
+<!--
+         <option selected value="gif"> Gif-HTML
+-->
+
+         <option selected value="gif"> GIF [inline]
+         <option value="gif_attach"> GIF [attachment]
+         <option value="ps"> Postscript-Text
+        </select>
+    </td>
+       <td>&nbsp;Output format</td>
+  </tr>
+  </table>
+ </td>
+</tr>
+
+<tr>
+<td align="left" valign="middle" bgcolor="#D3DCE3"><b>Submit</b></td>
+
+<td bgcolor="#FFFFCC"><input type="submit" name="submit" value=" Retrieve ">
+<input type="button" value=" Help " 
+  onclick="javascript: window.open('staralt_help.html','','scrollbars'); void('');">
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="middle" bgcolor="#D3DCE3"><b>ING telescope limits</b></td>
+
+<td bgcolor="#FFFFCC">
+<b>WHT:</b> 89.8&deg; &lt; Altitude &lt; 12&deg; (<a href="http://www.ing.iac.es/Astronomy/telescopes/wht/whtpointing.gif" target=_blank>plot</a>). 
+Targets with +28:57:40&gt;Dec&gt;+28:33:40 won&acute;t be accessible when transiting the zenital blind spot (~0.2&deg; size).
+<br>
+		 <br><b>INT:</b> 90&deg; &lt; Altitude &lt; 33&deg; (20&deg; if lower shutter raised), -6h &lt; HA &lt; +6, +90&deg;&gt;Dec&gt;-30&deg; 09&acute; 30" (<a href="http://www.ing.iac.es/Astronomy/observing/manuals/html_manuals/general/obs_guide/img54.gif" target=_blank>HA-Dec plot</a> - lower shutter raised; <a href="http://www.ing.iac.es/astronomy/telescopes/int/INTvisibility.jpg" target=_blank>lowest altitude-Dec plot</a>).
+
+
+
+
+
+</td>
+</tr>
+
+<tr>
+<td align="left" valign="middle" bgcolor="#D3DCE3"><b>More</b></td>
+
+<td bgcolor="#FFFFCC">
+These are other useful resources for planning observations: <a href="http://www.astrobetter.com/blog/2011/09/14/iobserve-the-astronomical-observing-app-weve-been-waiting-for/">iObserve</a>, 
+<a href="http://www.briancasey.org/artifacts/astro/">astronomy tools</a>, 
+<a href="http://www.dartmouth.edu/~physics/labs/skycalc/flyer.html">JSkyCalc</a>, 
+<a href="https://pythonhosted.org/Astropysics/coremods/obstools.html#astropysics.obstools.Site.nightPlot">obstools</a>,
+<a href="http://www.not.iac.es/observing/forms/visplot/">NOT&acute;s visplot</a>.
+
+</td></tr>
+
+
+
+</table>
+</form>
+
+
+
+<br><br><br>
+
+<p align="left"><font size="-2" color="#666666">
+&copy; 2002 Isaac Newton Group of Telescopes<br>
+Developed by Peter Sorensen, Marco Azzaro, Javier M&eacute;ndez
+
+
+
+<!-- End of body text -->
+
+<!-- Start of footer. Do not edit the next lines --> 
+
+<br><br>
+</td></tr></table>
+<center><table border=0 width=600 cellspacing=0 cellpadding=0><tr><td>
+<font face="Arial,helvetica,times">
+<font size=-1><a href="#top">Top</a> | <a href="javascript:history.back();">Back</a>
+</td></tr></table></center>
+<center><hr WIDTH="600"></center>
+
+<center><table WIDTH="600"><tr><td>
+
+<table>
+<tr valign=bottom>
+<td VALIGN=BOTTOM><img SRC="http://www.ing.iac.es/gifs/wht_small.gif" ></td>
+<td VALIGN=BOTTOM>
+<font face="Arial,helvetica,times">
+<font size=-1>
+
+Contact: 
+<script type="text/javascript" language="JavaScript1.2">
+     function scr_adr(){
+     var a,b,c,d,e,f
+     a='<a class=arclink href=\"mai'  // email-link part 1
+     b='jma'           // address part 1
+     c='\">'            // email-link part 4
+     a+='lto:'          // email-link part 2
+     b+='@ing.'       // address part 2
+     e='</a>'           // email-link part 3
+     f='Javier M&eacute;ndez'    // substitute email address with this string
+     b+='iac.es'        // address part 3
+     if (f) d=f
+     else d=b
+     document.write(a+b+c+d+e)
+     }
+     scr_adr()
+     //-->
+</script>
+
+&nbsp;(<i>Astronomy Organisation</i>)<br>Last modified: 19 August 2019
+</font></font>
+</td></tr></table>
+</td></tr></table>
+
+</center>
+		
+</BODY></HTML>
+	
+
+
