@@ -11,3 +11,4 @@ http://adsabs.harvard.edu/full/1996ASPC..110...30N # 3 objects, at least 1 suita
 ## Objects
 - https://en.wikipedia.org/wiki/BL_Lacertae NOT suitable: not visible in march
 - Markarian 501 & 421
+- Ton 599 http://simbad.u-strasbg.fr/simbad/sim-id?Ident=Ton+599
