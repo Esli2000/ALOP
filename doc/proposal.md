@@ -17,7 +17,8 @@
 - https://en.wikipedia.org/wiki/BL_Lacertae NOT suitable: not visible in march
 - Markarian 501 & 421 ?
 - 3C 345 zoek bij google scholar op 3C 345
-- 
+- OJ 287 (well known)
+- 3C 273 (very bright)
 
 ## Previous research
 - https://arxiv.org/abs/1811.11256 on TON 599
