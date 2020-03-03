@@ -26,6 +26,7 @@
 - https://academic.oup.com/mnras/article/483/3/3382/5234238 nice introduction
 - https://www.aanda.org/articles/aa/pdf/2016/07/aa27632-15.pdf again, nice intro and maybe nice objects
 - https://arxiv.org/pdf/astro-ph/9712006.pdf theoretical paper on the origin of the variabilities
+- https://arxiv.org/pdf/1307.5831.pdf MANY objects and F, C, chi^2 tests
 
 ## Things to account for
 - object search
