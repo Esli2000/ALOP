@@ -25,6 +25,7 @@
 - https://arxiv.org/abs/1812.10614 on INOV blazars (they used 1.3 m telescope); may prove very fruitful for selecting objects
 - https://academic.oup.com/mnras/article/483/3/3382/5234238 nice introduction
 - https://www.aanda.org/articles/aa/pdf/2016/07/aa27632-15.pdf again, nice intro and maybe nice objects
+- https://arxiv.org/pdf/astro-ph/9712006.pdf theoretical paper on the origin of the variabilities
 
 ## Things to account for
 - object search
