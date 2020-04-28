@@ -1,0 +1,92 @@
+DATA
+Exoplanet WASP-43b: B filter (TA: Willem)
+determine the transit duration and depth and relate that to the properties of the planet
+
+Once you manage to get into the servers, you can get to the datasets which are located in the following path. You can access this through the cd (change directory) command
+
+Important! Copy the files to /data1/[username]/ or /data2/[username]/ (bachelor servers) using a command like “cp” or “cp -r” (for entire directories). You should always leave the original files and tinker with a copy. This is good practice in general, and since multiple groups are working with the same dataset it is even more important now. Only copy files for your target: /disks/galpop2/ALOP2020dataRW/WASP43
+
+Things to think about. What does "master" mean? Why is building a master flat really important (this is in fact one of the most crucial steps for precise photometry)? When are the flats taken (i.e., at what time, night? day? twilight?)? Have a look at the individual flat ("sky background") images with DS9.
+
+flats during both evening and morning twilight
+master = to correct for nonuniformity CCD
+done
+
+ANALYSIS
+Quick overview of the procedure:
+
+1a. Double check which filter you have to work with. Note that all science frames for the transits were taken using windowing. Look up the INT WFC manual to understand what windowing is (why do we use windowing for exoplanet transits?).
+reduce readout time, such that measurements become time resolved
+done
+
+1b. Check the observing logs for issues, see the run_log_2018MMDD.int file. There is a lot of useful information in there and is gives an overview what is in all the files (filters used, target names, etc)
+done, see below
+
+
+
+
+2. You need to make a master Bias frame yourself in python. There are windowed and non-windowed bias frames (windowing the CCD affects the bias level). Do both, because we will need both (non-windowed for master flat and windowed for science).
+done
+
+3. You need to make a master Flat frame yourself in python (pick the correct filter!). The flats were taken in normal (non-windowed) mode.
+a) Therefore they need to be corrected first with the non-windowed master bias.
+done
+
+b) Then the Flats needs to be windowed manually to match image layout of the science science frames. Note that the flat frames are called "Sky background" in the log files.
+done
+
+4. Correct your science with the master Flat (manually windowed) and Bias (from the windowed bias frames).
+done
+
+TODO: checken of het goed is gegaan (code draaide zonder fouten)
+calibrated science in science_calibrated
+
+5. a) Photometry (differential using (a) reference star(s))
+TODO
+b) foutenanalyse
+TODO
+
+6. a) Derive transit parameters
+TODO PL code of transit fitting uit exoplanet module?
+b) foutenanalyse
+TODO
+
+TODO: tijd halen uit FITS headers van science zodat we er later wat mee kunnen voor transit curve?
+
+
+
+PROCEDURE
+
+ssh -X [username]@bach2.strw.leidenuniv.nl (bach1 did not have sufficient device space for copying data)
+*ww*
+cp -r /disks/galpop2/ALOP2020dataRW/WASP43 /data2/[username]/
+*lang wachten*
+*done*
+ds9 *to check files for instance*
+
+besef: er was 1 slechte bias, stond in de log, die is al verwijderd voor ons zie ik
+besef: we hebben geen dark (niet nodig: CCD wordt gekoeld)
+
+exptimes in seconden
+t_flat = [129.960, 20.060, 13.080, 9.080, 7.070] # exptime niet hetzelfde
+t_science = ...
+
+besef: we hebben exptime niet nodig, omdat we geen dark hebben, volgens mij
+
+bias en 'science' wat ik noem light windowed
+NWINDOWS=                    1 / Number of readout windows                      
+WINSEC1 = '[800:1200,1800:2200], disabled  ' / Readout window 1 (d-space)       
+WINSEC2 = '[0:0,0:0], disabled             ' / Readout window 2 (d-space)       
+WINSEC3 = '[0:0,0:0], disabled             ' / Readout window 3 (d-space)       
+WINSEC4 = '[668:1623,1642:2648], enabled   ' / Readout window 4 (d-space) <--- this one
+alle hetzelfde gewindowed (gelukkig maar)
+
+useful terminal commands:
+cd .. or cd ~ or ...
+ls
+pwd
+rm <file>
+cp -r <folder>
+mkdir <folder>
+ls -1 | wc -l #to count files in dir
+
